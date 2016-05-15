@@ -1,0 +1,55 @@
+<div class="shop-name" style="margin-top:15px;">
+  <div class="font-tiny"><%= @shop.name_ja %></div>
+  <h1 class="font-huge font-bold margin-b-humble break-word"><%= @shop.name_en %></h1>
+  <ul class="search-basic-info-list margin-b-humble">
+    <li class="margin-b-tiny col-irony-2 font-tiny -row -top">
+      <span class="icon-location -box-14px block"></span>
+      <span class="-box"><%= @shop.area.name %></span>
+    </li>
+    <li class="margin-b-tiny col-irony-2 font-tiny -row -top">
+      <span class="icon-cuisine -box-14px block"></span>
+      <span class="-box"><%= @shop.genre %></span>
+    </li>
+  </ul>
+</div>
+
+<div class="get-html"><div class="rts-part">
+  <dl class="make-a-phonecall padding-t-humble">
+    <dt class="dt -bottom-border">Make a reserve by email</dt>
+    <dd class="padding-humble">
+      <hr class="margin-b-tinytiny">
+      <div class="margin-b-humble padding-humble bg-lightgray align-center font-large">Everyday 24 hours</span></div>
+      <ul class="em-button padding-b-regular">
+        <li class="align-center">
+        <a href="mailto:info@bridge-world.jp?subject=Inquery of Restaurant Reservation&amp;body=Please%20add%20%22date%20and%20time%22%20that%20you%20want%20to%20reserve%20seats%20the%20following%20restaurant%2e%0d%0a%0d%0aRestaurant%3a%20<%= @shop.name_en %>%0d%0adate%20and%20time%3a%0d%0a%0d%0a%2d%2d%2d%2d%0d%0auser%3a%201111%0d%0aemail%3a%201111%0d%0a" class="open-event-entry-call padding-tb-tiny js-make-a-phonecall-6">
+            <span class="-button-text">
+              <span class="font-heavy font-bold">Send email</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </dd>
+  </dl>
+</div></div>
+
+<div class="get-html"><div class="rts-part">
+  <dl class="make-a-phonecall padding-t-humble">
+    <dt class="dt -bottom-border">Make a reserve by phone call</dt>
+    <dd class="padding-humble">
+      <hr class="margin-b-tinytiny">
+      <div class="margin-b-humble padding-humble bg-lightgray align-center font-large">Weekday 10:00 a.m. - 7:00 p.m.<span class="font-tiny"> *Japan Time</span></div>
+      <p class="padding-b-humble">"Reservation Agent" is a reservation support service. The phone number displayed is not the restaurant's phone number.</p>
+      <ul class="em-button padding-b-regular">
+        <li class="align-center">
+          <a href="tel:050-2018-1384" class="open-event-entry-call padding-tb-tiny js-make-a-phonecall-6">
+            <span class="icon-l-phone"></span>
+            <span class="-button-text">
+              <span class="font-heavy font-bold">Calling<span class="font-tiny -tel">050-2018-1384</span></span>
+            </span>
+          </a>
+        </li>
+      </ul>
+      <p class="font-small">If you make a phone call from abroad, call "81-50-2018-1384" please.</p>
+    </dd>
+  </dl>
+</div></div>

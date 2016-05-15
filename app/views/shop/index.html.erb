@@ -1,0 +1,111 @@
+<h1 class="h1 -std">TRAVEL FREE restaurant list</h1>
+
+<!--
+MEMO: 実装しない予定
+<form action="https://gurunavi.com/en/cd/srh/" method="post">
+  <div class="part-gray col-irony-2 -row">
+    <div class="font-large color-white -box">
+      <span class="bold">1,880</span>results
+    </div>
+    <input type="hidden" name="pref"      value="PREF13" >
+    <input type="hidden" name="area_l"    value="AREAL2115" >
+    <input type="hidden" name="area_m"    value="AREAM2115" >
+    <input type="hidden" name="rd" value="1" >
+    <input type="hidden" name="canonical" value="https://gurunavi.com/en/reg/pf_tokyo/am_shinjuku/rs/srh/" >
+
+    <div class="font-default align-right -box">
+      <button type="submit" class="search-button">
+        <span class="-icon"></span>
+        <span class="-text">Search Settings</span>
+      </button>
+    </div>
+  </div>
+</form>
+-->
+
+<% @shops.each do |shop| %>
+<section class="search-block part">
+  <a href="/shop/<%= shop.id %>">
+    <div class="font-tiny"><%= shop.name_ja %></div>
+    <h3 class="font-huge font-bold margin-b-humble break-word"><%= shop.name_en %></h3>
+    <div class="col-irony-2 -row -top">
+      <div class="-box-100px padding-r-humble margin-b-humble">
+        <img src="<%= shop.thumb_img_url %>"  width='200'  class="img-100" alt="<%= shop.name_en %>" title="<%= shop.name_en %>" />
+      </div>
+      <div class="-box">
+        <ul class="search-basic-info-list">
+          <li class="margin-b-tiny col-irony-2 font-tiny -row -top">
+            <span class="icon-location -box-14px block"></span>
+            <span class="-box"><%= shop.area.name %></span>
+          </li>
+          <li class="margin-b-tiny col-irony-2 font-tiny -row -top">
+            <span class="icon-cuisine -box-14px block"></span>
+            <span class="-box"><%= shop.genre %></span>
+          </li>
+          <li class="margin-b-tiny col-irony-2 font-tiny -row -top">
+            <span class="icon-yen -box-14px block"></span>
+            <span class="-box"><%= shop.average_price  %></span>
+          </li>
+          <li class="margin-b-tiny col-irony-2 font-tiny -row -top">
+            <span class="icon-train -box-14px block"></span>
+            <span class="-box"><%= shop.access.truncate(30) %></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+                        
+    <hr class="margin-b-humble" />
+    <ul class="margin-nth search-service font-small col-list-3 -margin">
+      <% if shop.card_accepted.present? %>
+      <li class="bg-pink -box">
+        <span class="color-white">Credit Card</span>
+      </li>
+      <% end %>
+      <% if shop.wifi.present? %>
+      <li class="bg-pink -box">
+        <span class="color-white">Wi-Fi</span>
+      </li>
+      <% end %>
+      <% if shop.private_room.present? %>
+      <li class="bg-pink -box">
+        <span class="color-white">Private Room</span>
+      </li>
+      <% end %>
+      <% if shop.smoking.present? %>
+      <li class="bg-pink -box">
+        <span class="color-white">Smoking</span>
+      </li>
+      <% end %>
+      <% if shop.menu.present? %>
+      <li class="bg-pink -box">
+        <span class="color-white">English Menu</span>
+      </li>
+      <% end %>
+      <% if shop.language_support.present? %>
+      <li class="bg-pink -box">
+        <span class="color-white">English OK</span>
+      </li>
+      <% end %>
+    </ul>
+  </a>
+</section>
+<% end %>
+<!--
+TODO: add pagination
+<div class="part">
+  <div class="pager">
+    <div class="-page">
+      <ul class="col">
+        <li class="-box"><strong class="-now">1</strong></li>
+        <li class="-box"><a href="https://gurunavi.com/en/reg/pf_tokyo/am_shinjuku/rs/srh/?p=2" class="-link">2</a></li>
+        <li class="-box"><a href="https://gurunavi.com/en/reg/pf_tokyo/am_shinjuku/rs/srh/?p=3" class="-link">3</a></li>
+        <li class="-box"><a href="https://gurunavi.com/en/reg/pf_tokyo/am_shinjuku/rs/srh/?p=4" class="-link">4</a></li>
+        <li class="-box"><a href="https://gurunavi.com/en/reg/pf_tokyo/am_shinjuku/rs/srh/?p=5" class="-link">5</a></li>
+      </ul>
+    </div>
+    <div class="-next">
+      <a href="https://gurunavi.com/en/reg/pf_tokyo/am_shinjuku/rs/srh/?p=2"> &rsaquo;</a>
+    </div>
+  </div>
+</div>
+-->

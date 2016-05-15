@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html  lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>TravelFree</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="bg-warm">
+<header>
+  <div class="g-header">
+    <div class="col-irony-2 -row">
+      <div class="-box">
+        <div><a href="/"><img src="https://gurunavi.com/img/sp/logo.png" alt="ぐるなび GURUNAVI" title="ぐるなび GURUNAVI" width="192" height="39" /></a></div>
+      </div>
+      <!--
+      <div class="-box-go-humble align-right">
+        <a href="#" class="-threes"><span class="-icon-threes"></span></a>
+      </div>
+      -->
+    </div>
+  </div>
+  <div class="bg-white g-main-nav-inside none">
+    <div class="searchbox padding-t-humble">
+      <form action="https://gurunavi.com/en/rs/srh/" method="get">
+        <input type="text" class="-text" name="word" value="" placeholder="Ginza   " />
+        <span class="-peke"></span>
+        <input type="text" class="-text" name="word2" value="" placeholder="Sushi   " />
+        <button type="submit" class="-submit"><span class="-icon"></span></button>
+      </form>
+    </div>
+    <hr />
+    <nav>
+      <ul class="buttons -chummy">
+        <li><a href="https://gurunavi.com/en/fea/" class="button-r -hasnext padding-tb-humble"><span class="-box"><span class="icon-red-star"></span>Restaurant Features</span></a></li>
+        <li><a href="https://gurunavi.com/en/s/inf/tip/" class="button-r -hasnext padding-tb-humble"><span class="-box"><span class="icon-red-flag"></span>Tips &amp; Guides</span></a></li>
+        <li><a href="http://r.gnavi.co.jp/jge/en/s/" class="button-r -hasnext padding-tb-humble"><span class="-box"><span class="icon-red-couple"></span>Gourmet Event</span></a></li>
+        <li><a href="https://gurunavi.com/en/japanfoodie/s/" class="button-r -hasnext padding-tb-humble"><span class="-box"><span class="icon-red-pen"></span>Column</span></a></li>
+        <li><a href="https://ssl.gnavi.co.jp/webmaster/lang/input/en/def/" class="button-r -hasnext padding-tb-humble"><span class="-box"><span class="icon-red-question"></span>Inquiry</span></a></li>
+      </ul>
+    </nav>
+    <div class="part-gray">
+      <a class="font-large align-center color-white block decoration-none"><span class="icon-white-close"></span>Close</a>
+    </div>
+  </div>
+</header>
+<div class="container">
+
+<%= yield %>
+
+</div>
+
+<div class="g-to-top align-right">
+  <a href="#">Back to Top<span class="icon-to-top"></span></a>
+</div>
+<footer class="g-footer">
+  <div class="part">
+    <div class="col-defined-2 -row">
+      <div class="-box">
+        <small>&copy; Gurunavi, Inc.</small>
+      </div>
+      <!--
+      <div class="align-right -box-200px">
+        <select name="" class="g-language href-select">
+          <option value="https://gurunavi.com/en/reg/pf_tokyo/am_shinjuku/rs/srh/" selected>English</option>
+          <option value="https://gurunavi.com/zh-hans/reg/pf_tokyo/am_shinjuku/rs/srh/">简体中文</option>
+          <option value="https://gurunavi.com/zh-hant/reg/pf_tokyo/am_shinjuku/rs/srh/">繁體中文</option>
+          <option value="https://gurunavi.com/ko/reg/pf_tokyo/am_shinjuku/rs/srh/">한국어</option>
+          <option value="http://www.gnavi.co.jp/">日本語</option>
+        </select>
+        <button class="g-pcswitch pc" data-href="/">
+          <span class="-icon-pc"></span>PC
+        </button>
+      </div>
+      -->
+    </div>
+  </div>
+</footer>
+
+<script src="https://x.gnst.jp/jquery-1.8.3.js" charset="utf-8"></script>
+<script src="https://gurunavi.com/js/jquery.colorbox.js?rev=1427843582"></script>
+<script>
+  <!--
+    if(jQuery('html').attr('lang') == 'ko') document.write(unescape('%3Cscript src="https://developers.kakao.com/sdk/js/kakao.min.js"%3E%3C/script%3E'));
+      -->
+</script>
+<script src="https://gurunavi.com/js/ensmp.js?rev=1444886967"></script>
+<div style="display:none;height:0;position:relative;visibility:hidden;width:0;">
+    <script src="https://x.gnst.jp/s.js"></script>
+    <script>('localhost' !== location.hostname) && document.write(unescape("%3Cscript src='//site.gnavi.co.jp/analysis/sc_"+getScSubdom()+".js'%3E%3C/script%3E"));</script>
+
+</body>
+</html>

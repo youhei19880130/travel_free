@@ -1,0 +1,241 @@
+<div class="shop-name" style="margin-top:15px;">
+  <div class="font-tiny"><%= @shop.name_ja %></div>
+  <h1 class="font-huge font-bold margin-b-humble break-word"><%= @shop.name_en %></h1>
+  <ul class="search-basic-info-list margin-b-humble">
+    <li class="margin-b-tiny col-irony-2 font-tiny -row -top">
+      <span class="icon-location -box-14px block"></span>
+      <span class="-box"><%= @shop.area.name %></span>
+    </li>
+    <li class="margin-b-tiny col-irony-2 font-tiny -row -top">
+      <span class="icon-cuisine -box-14px block"></span>
+      <span class="-box"><%= @shop.genre %></span>
+    </li>
+  </ul>
+</div>
+<!-- メニュー部分は非表示
+<ul class="shop-nav-button col-irony-3 -row">
+  <li class="-box-go-humble align-center">
+    <a href="tel:03-6252-9025" class="js-make-a-phonecall-1"><span class="-icon-phone"></span>Calling</a>
+  </li>
+  <li class="-box align-center"><a href="https://gurunavi.com/en/gcf7000/tl/rst/" class="open-reservation-window"><span class="-icon-calendar"></span>Reservation</a></li>
+  <li class="-box-go-humble align-center"><a href="https://gurunavi.com/en/gcf7000/mp/rst/"><span class="-icon-location"></span>Map</a></li>
+</ul>
+<ul class="shop-nav-contents font-tiny col-defined-4 -row align-center">
+  <li class="-box -active">
+    <a href="https://gurunavi.com/en/gcf7000/rst/">
+      <span class="-icon-overview"></span>
+      <span>Overview</span>
+    </a>
+  </li>
+  <li class="-box ">
+    <a href="https://gurunavi.com/en/gcf7000/mn/list/rst/">
+      <span class="-icon-menu"></span>
+      <span>Menu</span>
+    </a>
+  </li>
+  <li class="-box ">
+    <a href="https://gurunavi.com/en/gcf7000/ph/all/rst/">
+      <span class="-icon-Photos"></span>
+      <span>Photo</span>
+    </a>
+  </li>
+</ul>
+-->
+<%= image_tag(@shop.thumb_img_url, class: "img-liquid", width: "100%", alt: @shop.name_en, title: @shop.name_en) %>
+
+<div class="peekaboo-block part">
+  <p class="margin-b-tiny font-bold"><%= @shop.lead %></p>
+  <% if @shop.sentence.present? %>
+  <p class="triple-dot"><%= @shop.sentence[0..39] %><span class="peekaboo-hidden"><%= @shop.sentence[40..9999] %></span></p>
+  <div class="peekaboo padding-t-tiny -visible">
+    <a href="#" class="-more font-large"><span class="-icon"></span>See More</a>
+    <a href="#" class="-close font-large"><span class="-icon"></span>Close</a>
+  </div>
+  <% end %>
+</div>
+
+<!-- Menu
+<h2 class="h1 -std">Menu List</h2>
+<ul class="buttons">
+  <li>
+    <a href="https://gurunavi.com/en/gcf7000/mn/se_menu1/rst/" class="button-r -hasnext">
+      <span class="-box">Set Menu</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://gurunavi.com/en/gcf7000/mn/se_menu2/rst/" class="button-r -hasnext">
+      <span class="-box">Foods</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://gurunavi.com/en/gcf7000/mn/se_menu3/rst/" class="button-r -hasnext">
+      <span class="-box">Drinks</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://gurunavi.com/en/gcf7000/mn/se_menu4/rst/" class="button-r -hasnext">
+      <span class="-box">Desserts</span>
+    </a>
+  </li>
+</ul>
+-->
+
+<%= link_to 'Reservation', "#{@shop.id}/reserve", class: 'reserve_btn' %>
+
+<h2 class="h1 -std">Map</h2>
+<%= image_tag("http://maps.googleapis.com/maps/api/staticmap?markers=color:red%7C#{@shop.address_coordinate}&center=#{@shop.address_coordinate}&zoom=16&size=350x350&key=AIzaSyD3RVtqQLrxVWJHsjLJc_Xz_1FobHXlghY&language=en", alt: @shop.name_en, title: @shop.name_en, class: 'map') %>
+
+<!-- ディテール -->
+<h2 class="h1 -std">Restaurant Detail</h2>
+<div class="table">
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Restaurant Name</dt>
+    <dd class="-td -box break-word"><%= @shop.name_ja %><br><%= @shop.name_en %></dd>
+  </dl>
+  <!--
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Phone Number</dt>
+    <dd class="-td -box">
+    <a href="tel:<%= @shop.phone_number_ja %>" class="js-make-a-phonecall-3">
+      <div class="col-defined-2 -row">
+        <div class="-box"><%= @shop.phone_number_ja %>
+          <br><span class="color-default">(English speaking staff available)</span>
+          <br><span class="color-default">※Might use Japanese if foreign language staff absence by timing.</span>
+        </div>
+        <div class="-box-30px">
+          <span class="icon-c-phone"></span>
+        </div>
+      </div>
+    </a>
+
+    <hr class="hr -on-table">
+      <a href="tel:<%= @shop.phone_number_en %>" class="js-make-a-phonecall-4">
+        <div class="col-defined-2 -row">
+          <div class="-box"><%= @shop.phone_number_en %></div>
+          <div class="-box-30px">
+            <span class="icon-c-phone"></span>
+          </div>
+        </div>
+      </a>
+    </dd>
+  </dl>
+  -->
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Address</dt>
+    <dd class="-td -box">
+      <div class="col-defined-2 -row">
+        <div class="-box"><%= @shop.address %></div>
+      </div>
+    </dd>
+  </dl>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Access</dt>
+    <dd class="-td -box"><%= @shop.access %></dd>
+  </dl>
+  <% if @shop.parking.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Parking</dt>
+    <dd class="-td -box"><%= @shop.parking %></dd>
+  </dl>
+  <% end %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Hours</dt>
+    <dd class="-td -box"><%= @shop.hours %></dd>
+  </dl>
+  <% if @shop.close.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Close</dt>
+    <dd class="-td -box"><%= @shop.close %></dd>
+  </dl>
+  <% end %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Average price</dt>
+    <dd class="-td -box"><%= @shop.average_price %></dd>
+  </dl>
+  <% if @shop.service_charge.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Service charge</dt>
+    <dd class="-td -box"><%= @shop.service_charge %></dd>
+  </dl>
+  <% end %>
+  <% if @shop.card_accepted.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Cards accepted</dt>
+    <dd class="-td -box"><%= @shop.card_accepted %></dd>
+  </dl>
+  <% end %>
+</div>
+
+<h2 class="h1 -std">Seating/Facility information</h2>
+<div class="table">
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Seating Capacity</dt>
+    <dd class="-td -box"><%= @shop.seat_capacity %></dd>
+  </dl>
+  <% if @shop.max_party_capacity.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Banquet Maximum Party Size</dt>
+    <dd class="-td -box"><%= @shop.max_party_capacity %></dd>
+  </dl>
+  <% end %>
+  <!--
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Reservation Maximum Party Size</dt>
+    <dd class="-td -box">12 - 20</dd>
+  </dl>
+  -->
+  <% if @shop.private_room.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Private Room</dt>
+    <dd class="-td -box"><%= @shop.private_room %></dd>
+  </dl>
+  <% end %>
+  <% if @shop.smoking.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Smoking</dt>
+    <dd class="-td -box"><%= @shop.smoking %></dd>
+  </dl>
+  <% end %>
+  <% if @shop.wheelchair_accessibility.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Wheelchair Accessible Restrooms</dt>
+    <dd class="-td -box"><%= @shop.wheelchair_accessibility %></dd>
+  </dl>
+  <% end %>
+  <% if @shop.kid_friendly.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Kid Friendly</dt>
+    <dd class="-td -box"><%= @shop.kid_friendly %></dd>
+  </dl>
+  <% end %>
+  <% if @shop.language_support.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Language Support</dt>
+    <dd class="-td -box"><%= @shop.language_support %></dd>
+  </dl>
+  <% end %>
+  <% if @shop.wifi.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Wi-Fi  /  Plug-in</dt>
+    <dd class="-td -box"><%= @shop.wifi %></dd>
+  </dl>
+  <% end %>
+  <% if @shop.other.present? %>
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Other</dt>
+    <dd class="-td -box"><%= @shop.other %></dd>
+  </dl>
+  <% end %>
+</div>
+
+<% if @shop.dress_code.present? %>
+<h2 class="h1 -std">Menu and Others information</h2>
+<div class="table">
+  <dl class="-tr col-irony-2 -row -stretched">
+    <dt class="-th -box-90px">Dress Code</dt>
+    <dd class="-td -box"><%= @shop.dress_code %></dd>
+  </dl>
+</div>
+<% end %>
+
+<%= link_to 'Reservation', "#{@shop.id}/reserve", class: 'reserve_btn' %>

@@ -1,0 +1,21 @@
+  <!--
+  <div class="g-back">
+  <a href="https://gurunavi.com/"><span class="-icon-prev"></span>Back</a>
+  </div>
+  -->
+  <h1 class="h1 -std">TRAVEL FREE Japan Restaurant Guide</h1>
+  <ul class="buttons -chummy">
+    <% @area.each do |area| %>
+    <li>
+    <%= link_to "/#{area.id}", class: "button-r padding-tb-humble -hasnext" do %>
+      <div class="col-defined-2 -row -top">
+        <div class="-box-145px padding-r-humble margin-tbl-humble-minus"><img src="/images/<%= area.name %>.jpg" width="145" height="60" alt="<%= area.name %>" title="<%= area.name %>"></div>
+        <div class="-box">
+          <strong class="font-bold font-huge block"><%= area.name %></strong>
+        </div>
+      </div>
+      <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
